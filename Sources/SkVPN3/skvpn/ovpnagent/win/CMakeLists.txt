@@ -1,0 +1,6 @@
+include(findcoredeps)
+
+add_executable(ovpnagent ovpnagent.cpp)
+add_core_dependencies(ovpnagent)
+add_json_library(ovpnagent)
+target_compile_definitions(ovpnagent PRIVATE -DOVPNAGENT_DISABLE_PATH_CHECK -DSKVPN_AGENT_START_PROCESS)
